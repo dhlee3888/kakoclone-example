@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>HTML CSS</title>
+    <style>
+    .article__main{
+        margin: 20px;
+    }    
+    .article__images{
+        display: flex;
+        justify-content: left;
+        margin: 10px;
+    }
+    .article__image img{
+        width: 900px;
+        height: 300px;
+        padding: 5px;
+        background-color: azure;
+    }
+    .article__blocks{
+        position: static;
+        width: 1000px;
+        height: 500px;
+        background-color: darkcyan;
+        margin:10px;
+        padding:30px;
+    }
+    .article__block{
+        display: inline-block;   /*인라인블럭을 선언*/
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        margin: 2px;
+        border: 2px solid black;
+    }
+    .article__block-inside-content{
+        width: 100%;
+        height: 100%;
+        color: darkorange;
+        font-size:20px;
+        text-align: center;
+    }
+    .article__positions{
+        position: relative;
+        width: 1000px;
+        height: 500px;
+        background-color: darkcyan;
+        margin:10px;
+        padding:30px;
+    }
+    #article__position-id1{
+        position:static;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        margin: 2px;
+        border: 2px solid black;
+    }
+    #article__position-id2{
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        margin: 2px;
+        border: 2px solid black;
+        position:fixed;
+        top:300px;
+        left:1000px;
+    }
+    #article__position-id3{
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        margin: 2px;
+        border: 2px solid black;
+        position:absolute;
+        top: 100px;
+        left:300px;
+    }
+    #article__position-id4{
+        width: 200px;
+        height: 200px;
+        background-color: rgb(19, 194, 19);
+        margin: 2px;
+        border: 2px solid black;
+        position:absolute;
+        top: 1400px;
+        left:650px;
+    }
+    .article__position-inside-content{
+        width: 100%;
+        height: 100%;
+        color: black;
+        padding-left:10px;
+        font-size:15px;
+        text-align: left;        /* 텍스트 정렬 */
+        white-space: pre-line;   /* 텍스트를 있는 그대로 */
+    }
+    </style>
+  </head>
+
+  <body>
+    <header class="header__box">
+      <img class="header__logo" src="./images/logo.jpg"/>
+      <div class="header__title">
+        <span>HTML CSS examples</span> 
+      </div>
+    </header>
+
+    <div class="main__box">
+        <section class="main__contents">
+          <div class="main__title">
+            <!-- 컨텐츠 제목 수정 -->
+            <span>Inline-block | Position</span>              
+          </div>
+          <hr>
+
+          <!-- 메모수정 -->
+          <div class="main__memo">              
+              <p>
+                CSS in-line-block 과 display
+              <p/>
+          </div>
+
+          <!-- 이미지 및 설명문 수정 -->
+          <div class="main__desc">       
+            <img  class="main__logo" src="./images/inlineBlock.jpg" alt="" />
+            <div class="main__desc-text">
+              <p>
+                Display : Inline block<br>
+                1. block<br>
+                2. in-line-block<br>
+                <br>
+                Position  <br>
+                1. static relative absolute fixed <br>
+              </p>
+            </div>
+          </div>
+          <hr>
+
+
+          <!-- 여기부터 각 페이지의 다른 내용 코딩 : HTML 내 style tag 에 정의  -->
+
+          <article class="article__main">
+
+            <div class="articale__text">
+                <span>관련 이미지</span>
+            </div>
+            <div class="article__images">
+                <div class="article__image">
+                    <img src="./images/css-positioning-schemes-790d5b.png" alt="">
+                </div>
+            </div>
+
+            <div class="article__blocks">inline-block
+                <div class="article__block">
+                    <div class="article__block-inside-content">A</div>
+                </div>
+                <div class="article__block">
+                    <div class="article__block-inside-content">B</div>
+                </div>
+                <div class="article__block">
+                    <div class="article__block-inside-content">C</div>
+                </div>
+            </div>
+
+            <div class="article__positions">Position
+                <div id="article__position-id1">
+                    <div class="article__position-inside-content">
+                        STATIC 
+
+                        { 
+                        position: static;
+                        }
+                    </div>
+                </div>
+                <div id="article__position-id2">
+                    <div class="article__position-inside-content">
+                        FIXED
+
+                        {
+                        position:fixed;
+                        top:300px;
+                        left:1000px;
+                        } 
+                    </div>
+                </div>
+                <div id="article__position-id3">
+                    <div class="article__position-inside-content">
+                        ABSOLUTE
+                        (child of relative)
+
+                        {
+                        position:absolute;
+                        top: 100px;
+                        left:300px;
+                        }
+                    </div>
+                </div>
+            </div>
+            <div id="article__position-id4">
+                <div class="article__position-inside-content">
+                    ABSOLUTE 
+                    (outside location)
+
+                    { 
+                    position:absolute;
+                    top: 1400px;
+                    left: 650px;
+                    }
+                </div>
+            </div>
+
+            <xmp class="xmp__text">
+
+            좀 더 복잡한 레이아웃을 만들기 위해서는 position 프로퍼티에 관해 살펴볼 필요가 있습니다. 
+            position 프로퍼티에는 다양한 값을 설정할 수 있으며, 
+            각 값의 이름은 제대로 지어지지 않아서 기억하기가 불가능합니다. 
+
+            </xmp>
+
+            
+          </article>
+        </section>
+
+
+        <!-- 여기부터 네비게이션 링크 연결 수정 -->
+        <nav class="nav__menu">
+          <div>
+            <a href="index.html">
+              <h4>HTML CSS lecture Home</h4>
+            </a>
+            <ul>
+              <li><a href="./html-tags.html">HTML tags</a></li>
+              <li><a href="./outline.html">HTML outline</a></li>
+              <li><a href="./css-common.html">CSS common</a></li>
+              <li><a href="./css-block.html">Inline block | Position</a></li>
+              <li><a href="./css-flex.html">Flex</a></li>
+              <li><a href="./css-selector.html">Selectors | State</a></li>
+              <li><a href="./css-advanced.html">CSS Advanced</a></li>
+            </ul>
+          </div>
+        </nav>
+  </body>
+</html>

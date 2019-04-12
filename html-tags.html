@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>HTML CSS</title>
+  </head>
+
+  <body>
+    <header class="header__box">
+      <img class="header__logo" src="./images/logo.jpg"/>
+      <div class="header__title">
+        <span>HTML CSS examples</span> 
+      </div>
+    </header>
+
+    <div class="main__box">
+        <section class="main__contents">
+          <div class="main__title">
+            <!-- 컨텐츠 제목 수정 -->
+            <span>HTML Tags</span>              
+          </div>
+          <hr>
+
+          <!-- 메모수정 -->
+          <div class="main__memo">              
+              <p>
+                outline 은 어떤 경우에 사용되는 지 설명한다
+              <p/>
+          </div>
+
+          <!-- 이미지 및 설명문 수정 -->
+          <div class="main__desc">       
+            <img  class="main__logo" src="./images/outline.jpg" alt="" />
+            <div class="main__desc-text">
+              <p>
+                아웃라인에 대해 설명한다<br>
+                아웃라인은 HTML5 의 구조라고 볼수 있다<br>
+              </p>
+            </div>
+          </div>
+          <hr>
+
+
+          <!-- 여기부터 각 페이지의 다른 내용 코딩 : HTML 내 style tag 에 정의  -->
+
+          <article>
+            <xmp class="xmp__text">
+
+                [ Tag 기본 형태 ]
+
+                <name attribute="vlaue">Content</name>
+            
+                      ex)
+                      <human gender="male">Human</human>
+                      <dog breed="german-shepard">Dog</dog>
+                      <title>This is title of this documemt</title>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea maxime voluptates</p>
+                  
+                      link)
+                      <a href="http://google.com">Go to Google</a>                   현재창에서 구글을 연다
+                      <a href="http://google.com" target="_blank">Go to Google</a>   새창에서 구글을 연다
+            
+
+
+
+                [ HTML 작성 규칙 ]
+
+                <!DOCTYPE html> 로 선언함.  닫지 않는 self-contained tag임, 이 문서가 html라는 정보를 주는 것임
+
+                <html>  로 시작하여  </html> 닫을때 까지  까지 몽땅 html 임
+                <head> </head>와  <body> </body> 파트로 구성됨
+
+                      <head> 는 브라우저에게 정보만 주고 사용자에는 보여지지 않음. 정보는 <meta> 를 활용
+                            <meta charset="utf-8">는  문자셋트 정보를 줌 추가 정보만 알려 주기 때문에 닫지 않음
+                            <meta name="description" content="Wellcome to my Web site!"> desctiption은 구글검색시 간략한 설명을 제공함
+                            <meta name="author" content="Simon Lee">  author 는 작성자의 이름을 제공함
+                            <title>THIS PAGE TITLE </title>는 html  페이지의 제목을 나타냄
+                      </head>
+
+                      <body> 는 사용자에게 보임
+                            <h1> 는 제목을 나타내는데 h1 부터 </h1>
+                            <h6> 까지 계층적으로 구성됨 </h6>
+                            <h1> This is my Big titel </h1>
+                            <h6> This is my small title </h6>
+                      </body>
+
+
+
+
+               [ Tag 의 종류 ]
+
+                semantic
+                      <h1>title</h1>
+                      <header>header</header>
+                      <section>section</section>
+                      <article>aricle</article>
+                      <nav>navication</nav>
+
+                non-semantic
+                      <div>just box container</div>   
+                      <span>just short text container</span> 
+
+
+
+
+                [ Tag 식별 ]
+
+                ID, Class 사용 하여 각 태그를 식별해냄 ( What is what ?)
+
+                id="only-one"  unique 해야하며 클래스는 그룹을 나타냄  실제 활용성은 class 가 유리함
+                  <h1 id="개체" class="종족">title</h1>
+
+                CSS 에서  표기법
+                     tag      tag명
+                     class    .class명
+                     id       #id명
+
+
+
+
+                [ 참고 ]
+
+                <tag> 정보를 HTML 에 보이게 하려면 'xmp' tag를 사용하면 된다.
+            
+
+            </xmp>
+
+            
+          </article>
+        </section>
+
+
+        <!-- 여기부터 네비게이션 링크 연결 수정 -->
+        <nav class="nav__menu">
+          <div>
+            <a href="index.html">
+              <h4>HTML CSS lecture Home</h4>
+            </a>
+            <ul>
+              <li><a href="./html-tags.html">HTML tags</a></li>
+              <li><a href="./outline.html">HTML outline</a></li>
+              <li><a href="./css-common.html">CSS common</a></li>
+              <li><a href="./css-block.html">Inline block | Position</a></li>
+              <li><a href="./css-flex.html">Flex</a></li>
+              <li><a href="./css-selector.html">Selectors | State</a></li>
+              <li><a href="./css-advanced.html">CSS Advanced</a></li>
+            </ul>
+          </div>
+        </nav>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>HTML CSS</title>
+    <style>
+      .article__container {
+        margin: 10px 30px 10px 10px;
+      }
+      .article__subtitle {
+        font-size: 25px;
+        color: white;
+        margin: 30px 10px 10px 15px;
+      }
+       .article__items {
+        position: relative;
+        display: flex;
+        flex-direction: row; /* 디폴드 값이 row 임  justify-content 내용이 가로중심이 됨*/
+        justify-content: flex-start; /* 가로 중심 정렬 ( center:가로가운데,  space-around: 가로균등정렬 ) */
+        align-items: center; /* 세로 중심 정렬 ( center:세로가운데, flex-start: 윗쪽붙음,  flex-end:아래붙음 ) */
+        width: 100%;
+        height: 100%;
+        background-color: darkcyan;
+        margin: 10px;
+        padding: 30px;
+      }
+
+      .article__item {
+        width: 600px;
+        height: 600px;
+        background-color: cadetblue;
+        margin: 4px;
+      }
+
+      .article__item:first-child{    /*최하위 동일 테크에만 적용됨 */
+        color: blue;
+        text-align: center;
+      }
+
+
+      .article__items__state {
+        position: relative;
+        display: flex;
+        flex-direction: row; /* 디폴드 값이 row 임  justify-content 내용이 가로중심이 됨*/
+        justify-content: space-around; /* 가로 중심 정렬 ( center:가로가운데,  space-around: 가로균등정렬 ) */
+        align-items: center; /* 세로 중심 정렬 ( center:세로가운데, flex-start: 윗쪽붙음,  flex-end:아래붙음 ) */
+        width: 100%;
+        height: 100%;
+        background-color: darkcyan;
+        margin: 10px;
+        padding: 30px;
+      }
+
+
+      .article__items__state > .article__item {    /*직접 하위 셀렉터 선택 */
+        background-color: red;
+        width:300px;
+        height:300px;
+        border: 10px solid black;
+        font-size: 30px;
+      }
+
+
+      .article__item[state="hover"]:hover{          
+        background-color: blue;
+      }
+      .article__item[state="active"]:active{
+        background-color: yellow;
+      }
+      .article__item[state="focus"]:focus{
+        color: green;
+        border: 10px solid green;
+      }
+      .article__item[state="focus-within"]:focus-within{
+        color: pink;
+      }
+      .article__item[state="visited"]:visited{
+        color: red;
+      }
+
+
+
+      .article__item-inside-content {
+        width: 100%;
+        height: 100%;
+        color: black;
+        padding-left: 10px;
+        font-size: 15px;
+        line-height: 22px;
+        text-align: left; /* 텍스트 정렬 */
+        white-space: pre-line; /* 텍스트를 있는 그대로 */
+      }
+      #item__desc{
+        width: 800px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header__box">
+      <img class="header__logo" src="./images/logo.jpg" />
+      <div class="header__title">
+        <span>HTML CSS examples</span>
+      </div>
+    </header>
+
+    <div class="main__box">
+      <section class="main__contents">
+
+        <header class="main__title">
+          <span>Selectors and Pseudo Selectors</span>
+          <hr />
+        </header>
+
+        <article class="article__container">
+          <p class="article__subtitle">CSS Selectors and Pseudo Selectors</p>
+          <div class="article__items">
+            <img class="article__item" src="./images/Css-selectors.jpg"/>
+            <div id="item__desc" class="article__item">
+                <div class="article__item-inside-content">
+                  <a href="https://www.w3schools.com/cssref/css_selectors.asp"
+                     target="_blank">
+                  CSS 에 tag, class, id  이외 선택자 사용하는 방법  (w3schools)
+                  </a> 
+                   1. by 속성명   input[required="requires"]{ }
+                   2. by order   .box:nth-child(2n+1){ }   .box:first-child{ }  .box:last-child{ }
+                   3. by 관계     직접관계  .conatiner > .box{ }    형제관계 .container + .box { } ....
+                </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="article__container">
+          <p class="article__subtitle">Selector 사용 유형</p>
+          <div class="article__items">
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                [속성 선택자] 
+
+                h1[title] {color:red;}   태그/속성명 일치시
+                h1[title="apple"] {color:red;} 태그/속성명/속성값 일치시
+                [title] { } 속성명 일치
+                [title="value"] 속성명/속성값 일치시
+
+                속성 선택자에서는 [ ], ~=, *=, |=, ^=, $=  등의 기호를 사용합니다.
+              </div>
+            </div>
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                [순서 order]
+                
+                :nth-child(2n+1) (odd) (even) (-n+3) { }
+                :first-clild { }
+                :last-child  { }
+
+                동일한 tag 가 child 에 있을때만 적용됨
+              </div>
+            </div>
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                flex Box 3
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="article__container">
+          <p class="article__subtitle">CSS State</p>
+          <div class="article__items">
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                :hover 
+                 마우스가 위에 올라가면 작동
+
+                 ex) box:hover { } 
+                 
+              </div>
+            </div>
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                :active
+                 마우스로 영역을 클릭하면 작동
+
+                 ex) box:active { }
+              </div>
+            </div>
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                :focus
+
+                마우스가 영역에 도착하면 작동
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="article__container">
+          <p class="article__subtitle">state examples</p>
+          <div class="article__items__state">
+            <div class="article__item" state="hover">hover</div>
+            <div class="article__item" state="active">active</div>
+            <div class="article__item"></div>
+          </div> 
+          <div class="article__items__state"> 
+            <div class="article__item" state="forcus">focus</div>
+            <div class="article__item" state="forcus-within">focus-within</div>
+            <div class="article__item" state="visited">visited</div>
+          </div>
+        </article>
+
+
+        <article class="article__container">
+          <p class="article__subtitle">설명 - Example html</p>
+          <div class="article__items">
+            <xmp class="xmp__text">
+
+              <!DOCTYPE html>
+              <html lang="en">
+              <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>Selectors and Pseudo Selectors</title>
+                <style>
+                input[required="required"]{
+                  background-color: red;
+                }
+                .box:nth-child(3n+2){
+                  background-color: pink;
+                }
+                .container > .box{
+                  background-color: yellow;
+                }
+                .box{
+                  border:1px solid yellow;
+                }
+                .box{
+                  background-color: green;
+                  display: block;
+                  height: 100px;
+                  border:1px solid black;
+                }
+                .child{
+                  width: 40px;
+                }
+                </style>
+              </head>
+              <body>
+              <div class="container">
+                <div class="box">
+                  <div class="box child"></div>
+                </div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box">
+                  <input type="password" required="required" />
+                  <input type="submit" required="required" />
+                </div>
+              </div>
+              </body>
+              </html>
+            </xmp>
+          </div>
+        </article>
+      </section>
+
+      <!-- 여기부터 네비게이션 링크 연결 수정 -->
+      <nav class="nav__menu">
+        <div>
+          <a href="index.html">
+            <h4>HTML CSS lecture Home</h4>
+          </a>
+          <ul>
+            <li><a href="./html-tags.html">HTML tags</a></li>
+            <li><a href="./outline.html">HTML outline</a></li>
+            <li><a href="./css-common.html">CSS common</a></li>
+            <li><a href="./css-block.html">Inline block | Position</a></li>
+            <li><a href="./css-flex.html">Flex</a></li>
+            <li><a href="./css-selector.html">Selectors | State</a></li>
+            <li><a href="./css-advanced.html">CSS Advanced</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

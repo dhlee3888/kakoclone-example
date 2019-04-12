@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>HTML CSS</title>
+    <style>
+      .article__container {
+        margin: 10px 30px 10px 10px;
+      }
+      .article__subtitle {
+        font-size: 25px;
+        color: white;
+        margin: 30px 10px 10px 15px;
+      }
+       .article__items {
+        position: relative;
+        display: flex;
+        flex-direction: row; /* 디폴드 값이 row 임  justify-content 내용이 가로중심이 됨*/
+        justify-content: flex-start; /* 가로 중심 정렬 ( center:가로가운데,  space-around: 가로균등정렬 ) */
+        align-items: center; /* 세로 중심 정렬 ( center:세로가운데, flex-start: 윗쪽붙음,  flex-end:아래붙음 ) */
+        width: 100%;
+        height: 100%;
+        background-color: darkcyan;
+        margin: 10px;
+        padding: 30px;
+      }
+      .article__items-col {
+        position: relative;
+        display: flex;
+        flex-direction: column; /* column 설정시 justify-content 내용이 세로중심이 됨 */
+        justify-content: space-around; /* 세로 중심 정렬 ( center:세로가운데,  space-around :세로균등정렬 ) */
+        align-items: center; /* 가로 중심 정렬 ( center:가로가운데,  flex-start:왼쪽붙음, flex-end:오른쪽붙음 ) */
+        width: 100%;
+        height: 100%;
+        background-color: darkcyan;
+        margin: 10px;
+        padding: 30px;
+      }
+      .article__items-wrap {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse; /* row-reverse 를 설정하면 순서가 반대로 됨 */
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap; /* 기본은 no-wrap 이며 박스 크기를 줄여 붙여준다. wrap 일때는 박스크기 그대로 다음줄로 넘어간다 */
+        width: 100%;
+        height: 100%;
+        background-color: darkcyan;
+        margin: 10px;
+        padding: 30px;
+      }
+
+      .article__item {
+        width: 400px;
+        height: 200px;
+        background-color: cadetblue;
+        margin: 4px;
+      }
+      .article__item-inside-content {
+        width: 100%;
+        height: 100%;
+        color: black;
+        padding-left: 10px;
+        font-size: 15px;
+        text-align: left; /* 텍스트 정렬 */
+        white-space: pre-line; /* 텍스트를 있는 그대로 */
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header__box">
+      <img class="header__logo" src="./images/logo.jpg" />
+      <div class="header__title">
+        <span>HTML CSS examples</span>
+      </div>
+    </header>
+
+    <div class="main__box">
+      <section class="main__contents">
+
+        <header class="main__title">
+          <span>Flex</span>
+          <hr />
+        </header>
+
+        <article class="article__container">
+          <p class="article__subtitle">CSS Flex 사용법</p>
+          <div class="article__items">
+            <img class="article__item" src="./images/flexbox-guide.jpg"/>
+            <div class="article__item">
+                <div class="article__item-inside-content">
+                   Flex 엄청 좋다
+                </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="article__container">
+          <p class="article__subtitle">
+            관련 이미지 flex-diection row(default) v.s column
+          </p>
+          <div class="article__items">
+            <img
+              class="article__item"
+              src="./images/flex-justify-content-design-style.jpg"
+              alt=""
+            />
+            <img class="article__item" src="./images/flex.png" alt="" />
+          </div>
+        </article>
+
+        <article class="article__container">
+          <p class="article__subtitle">flex 기본</p>
+          <div class="article__items">
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                flex Box 1
+              </div>
+            </div>
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                flex Box 2
+              </div>
+            </div>
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                flex Box 3
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="article__container">
+          <p class="article__subtitle">flex-direction:column</p>
+          <div class="article__items-col">
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                flex Box 1
+              </div>
+            </div>
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                flex Box 2
+              </div>
+            </div>
+            <div class="article__item">
+              <div class="article__item-inside-content">
+                flex Box 3
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="article__container">
+          <p class="article__subtitle">flex-wrap:no-wrap</p>
+          <div class="article__items">
+            <div class="article__item">1</div>
+            <div class="article__item">2</div>
+            <div class="article__item">3</div>
+            <div class="article__item">4</div>
+            <div class="article__item">5</div>
+            <div class="article__item">6</div>
+            <div class="article__item">7</div>
+            <div class="article__item">8</div>
+            <div class="article__item">9</div>
+            <div class="article__item">10</div>
+            <div class="article__item">11</div>
+          </div>
+        </article>
+
+        <article class="article__container">
+          <p class="article__subtitle">
+            flex-wrap:wrap flex-direction:row-reverse
+          </p>
+          <div class="article__items-wrap">
+            <div class="article__item">1</div>
+            <div class="article__item">2</div>
+            <div class="article__item">3</div>
+            <div class="article__item">4</div>
+            <div class="article__item">5</div>
+            <div class="article__item">6</div>
+            <div class="article__item">7</div>
+            <div class="article__item">8</div>
+            <div class="article__item">9</div>
+            <div class="article__item">10</div>
+            <div class="article__item">11</div>
+          </div>
+        </article>
+
+        <article class="article__container">
+          <p class="article__subtitle">설명</p>
+          <div class="article__items">
+            <xmp class="xmp__text">
+
+            좀 더 복잡한 레이아웃을 만들기 위해서는 position 프로퍼티에 관해 살펴볼 필요가 있습니다. 
+
+            .article__items{
+                position: relative;
+                display:flex;
+                flex-direction: row;             /* 디폴드 값이 row 임  justify-content 내용이 가로중심이 됨*/
+                justify-content: space-around;   /* 가로 중심 정렬 ( center:가로가운데,  space-around: 가로균등정렬 ) */
+                align-items: flex-start;         /* 세로 중심 정렬 ( center:세로가운데,  flex-start: 윗쪽붙음,  flex-end:아래붙음 ) */
+                width: 100%;
+                height:500px;
+                background-color: darkcyan;
+                margin:10px;
+                padding:30px;
+            }
+            .article__items-col{
+                position: relative;
+                display:flex;
+                flex-direction: column;          /* column 설정시 justify-content 내용이 세로중심이 됨 */
+                justify-content: space-around;   /* 세로 중심 정렬 ( center:세로가운데,  space-around :세로균등정렬 ) */
+                align-items: center;             /* 가로 중심 정렬 ( center:가로가운데,  flex-start:왼쪽붙음, flex-end:오른쪽붙음 ) */
+                width: 100%;
+                height: 1000px;
+                background-color: darkcyan;
+                margin:10px;
+                padding:30px;
+            }
+            .article__items-wrap{
+                position: relative;
+                display:flex;
+                flex-direction: row;     /* row-reverse 를 설정하면 순서가 반대로 됨 */    
+                justify-content: flex-start; 
+                align-items: center;
+                flex-wrap: wrap;      /* 기본은 no-wrap 이며 박스 크기를 줄여 붙여준다. wrap 일때는 박스크기 그대로 다음줄로 넘어간다 */
+                width: 100%;
+                height: 100%;
+                background-color: darkcyan;
+                margin:10px;
+                padding:30px;
+            }
+            </xmp>
+          </div>
+        </article>
+      </section>
+
+      <!-- 여기부터 네비게이션 링크 연결 수정 -->
+      <nav class="nav__menu">
+        <div>
+          <a href="index.html">
+            <h4>HTML CSS lecture Home</h4>
+          </a>
+          <ul>
+            <li><a href="./html-tags.html">HTML tags</a></li>
+            <li><a href="./outline.html">HTML outline</a></li>
+            <li><a href="./css-common.html">CSS common</a></li>
+            <li><a href="./css-block.html">Inline block | Position</a></li>
+            <li><a href="./css-flex.html">Flex</a></li>
+            <li><a href="./css-selector.html">Selectors | State</a></li>
+            <li><a href="./css-advanced.html">CSS Advanced</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

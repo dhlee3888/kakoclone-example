@@ -1,0 +1,86 @@
+@import "reset.css";
+
+html,body{
+  height: 100%
+}
+
+.header__box {
+  background-color: orange;
+  padding: 20px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.header__logo {
+  width: 100px;
+  height: 60px;
+  border: 4px solid red;
+}
+
+.header__title {
+  font-size: 55px;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.main__box {
+  display: flex;
+  justify-content: first baseline;
+  background-color: brown;
+  border: 1px solid black;
+}
+
+.main__contents {
+  width: 80%;
+  border: 1px solid black;
+  padding: 15px;
+  color: yellow;
+}
+
+.main__title {
+  font-size: 55px;
+  padding: 10px;
+}
+
+.main__memo {
+  font-size: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.main__desc {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  line-height: 25px;
+}
+
+.main__logo {
+  width: 500px;
+  height: 300px;
+}
+
+.main__desc-text {
+  padding-left: 30px;
+}
+.nav__menu {
+  background-color: greenyellow;
+  width: 20%;
+  border: 1px solid black;
+  padding: 15px;
+  line-height: 30px;
+  font-size: 20px;
+  color: black;
+}
+
+.nav__menu ul {
+  list-style-position: inside;
+  list-style-type: square;
+  margin: 30px;
+}
+
+.xmp__text {
+  font-size: 20px;
+  line-height: 30px;
+}
